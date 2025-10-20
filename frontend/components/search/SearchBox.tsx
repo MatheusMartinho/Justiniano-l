@@ -67,14 +67,14 @@ export default function SearchBox({ onSearch, loading, disabled = false }: Searc
             onChange={(e) => setQuery(e.target.value)}
             disabled={isDisabled}
             placeholder="Digite sua pergunta jurídica em linguagem natural..."
-            className="w-full px-6 py-4 pr-32 text-lg bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+            className="w-full px-6 py-5 pr-40 text-lg glass text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#BF1725] focus:border-[#BF1725]/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all rounded-2xl"
           />
           
           {/* Search Button */}
           <button
             type="submit"
             disabled={isDisabled}
-            className="absolute right-2 top-1/2 -translate-y-1/2 px-6 py-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-medium rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+            className="absolute right-2 top-1/2 -translate-y-1/2 px-6 py-3 bg-gradient-red text-white font-semibold rounded-full hover:scale-105 hover:shadow-lg hover:shadow-[#BF1725]/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
           >
             {loading ? (
               <>
@@ -92,22 +92,22 @@ export default function SearchBox({ onSearch, loading, disabled = false }: Searc
         
         {/* Error Message */}
         {error && (
-          <p className="text-red-400 text-sm px-2">
+          <p className="text-[#F2A6AF] text-sm px-2">
             {error}
           </p>
         )}
       </form>
 
       {/* Example Queries */}
-      <div className="space-y-2">
-        <p className="text-sm text-slate-400 px-2">Exemplos de buscas:</p>
+      <div className="space-y-3">
+        <p className="text-sm text-white/60 px-2">Exemplos de buscas:</p>
         <div className="flex flex-wrap gap-2">
           {exampleQueries.map((example, index) => (
             <button
               key={index}
               onClick={() => handleExampleClick(example)}
               disabled={isDisabled}
-              className="px-4 py-2 text-sm bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-4 py-2 text-sm glass-light hover:glass-red text-white/80 hover:text-white rounded-full transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {example}
             </button>

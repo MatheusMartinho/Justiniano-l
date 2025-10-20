@@ -7,24 +7,26 @@ import { Scale, Search, Zap, Shield, ArrowRight } from "lucide-react";
  */
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
           <div className="text-center space-y-8">
             {/* Icon */}
             <div className="flex justify-center">
-              <Scale className="w-20 h-20 text-amber-500" />
+              <div className="w-32 h-32 rounded-full glass-red flex items-center justify-center animate-pulse">
+                <Scale className="w-16 h-16 text-[#BF1725]" />
+              </div>
             </div>
             
             {/* Heading */}
-            <h1 className="text-4xl sm:text-6xl font-bold text-white tracking-tight">
+            <h1 className="text-5xl sm:text-7xl font-bold text-white tracking-tight">
               Pesquisa Jurídica
-              <span className="block text-amber-500">Inteligente</span>
+              <span className="block bg-gradient-to-r from-[#BF1725] to-[#D92546] bg-clip-text text-transparent">Inteligente</span>
             </h1>
             
             {/* Subheading */}
-            <p className="text-xl sm:text-2xl text-slate-300 max-w-3xl mx-auto">
+            <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto">
               Encontre jurisprudência dos tribunais superiores brasileiros em segundos 
               com o poder da Inteligência Artificial
             </p>
@@ -33,7 +35,7 @@ export default function Home() {
             <div className="flex justify-center gap-4 pt-4">
               <Link
                 href="/search"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold rounded-lg transition-colors text-lg"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-red text-white font-semibold rounded-full hover:scale-105 hover:shadow-2xl hover:shadow-[#BF1725]/50 transition-all text-lg"
               >
                 Começar Agora
                 <ArrowRight className="w-5 h-5" />
@@ -44,40 +46,46 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 bg-slate-800/50">
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             {/* Feature 1 */}
-            <div className="bg-slate-800 border border-slate-700 rounded-lg p-8 space-y-4">
-              <Search className="w-12 h-12 text-amber-500" />
+            <div className="glass rounded-3xl p-8 space-y-4 hover:glass-red transition-all">
+              <div className="w-16 h-16 rounded-full glass-red flex items-center justify-center">
+                <Search className="w-8 h-8 text-[#BF1725]" />
+              </div>
               <h3 className="text-2xl font-bold text-white">
                 Busca em Linguagem Natural
               </h3>
-              <p className="text-slate-300">
+              <p className="text-white/80">
                 Digite sua pergunta jurídica como você faria a um colega. 
                 Nossa IA entende o contexto e encontra as decisões relevantes.
               </p>
             </div>
 
             {/* Feature 2 */}
-            <div className="bg-slate-800 border border-slate-700 rounded-lg p-8 space-y-4">
-              <Zap className="w-12 h-12 text-amber-500" />
+            <div className="glass rounded-3xl p-8 space-y-4 hover:glass-red transition-all">
+              <div className="w-16 h-16 rounded-full glass-red flex items-center justify-center">
+                <Zap className="w-8 h-8 text-[#BF1725]" />
+              </div>
               <h3 className="text-2xl font-bold text-white">
                 Síntese Instantânea
               </h3>
-              <p className="text-slate-300">
+              <p className="text-white/80">
                 Receba uma síntese clara do entendimento predominante dos tribunais, 
                 com valores médios e precedentes relevantes.
               </p>
             </div>
 
             {/* Feature 3 */}
-            <div className="bg-slate-800 border border-slate-700 rounded-lg p-8 space-y-4">
-              <Shield className="w-12 h-12 text-amber-500" />
+            <div className="glass rounded-3xl p-8 space-y-4 hover:glass-red transition-all">
+              <div className="w-16 h-16 rounded-full glass-red flex items-center justify-center">
+                <Shield className="w-8 h-8 text-[#BF1725]" />
+              </div>
               <h3 className="text-2xl font-bold text-white">
                 Fontes Confiáveis
               </h3>
-              <p className="text-slate-300">
+              <p className="text-white/80">
                 Todas as informações vêm diretamente dos sites oficiais do STJ e STF, 
                 com links para as decisões completas.
               </p>

@@ -162,14 +162,14 @@ export default function SearchPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 py-8">
+    <div className="min-h-screen py-8">
       <div className="max-w-4xl mx-auto px-4 space-y-8">
         {/* Page Header */}
         <div className="text-center space-y-2">
-          <h1 className="text-3xl font-bold text-white">
+          <h1 className="text-4xl font-bold text-white">
             Pesquisa Jurisprudencial
           </h1>
-          <p className="text-slate-400">
+          <p className="text-white/60">
             Consulte jurisprudência dos tribunais superiores em linguagem natural
           </p>
         </div>
@@ -185,8 +185,8 @@ export default function SearchPage() {
 
         {/* Error State */}
         {error && (
-          <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-6">
-            <p className="text-red-400 text-center">
+          <div className="glass-red rounded-3xl p-6">
+            <p className="text-white text-center">
               {error}
             </p>
           </div>
@@ -199,13 +199,15 @@ export default function SearchPage() {
 
         {/* Empty State */}
         {!result && !loading && !error && (
-          <div className="flex flex-col items-center justify-center min-h-[400px] space-y-4">
-            <Scale className="w-24 h-24 text-slate-700" />
-            <div className="text-center space-y-2">
-              <h2 className="text-2xl font-bold text-slate-300">
+          <div className="flex flex-col items-center justify-center min-h-[400px] space-y-6">
+            <div className="w-32 h-32 rounded-full glass-red flex items-center justify-center">
+              <Scale className="w-16 h-16 text-[#BF1725]" />
+            </div>
+            <div className="text-center space-y-3">
+              <h2 className="text-3xl font-bold text-white">
                 Bem-vindo ao Perplexity Jurídico
               </h2>
-              <p className="text-slate-400 max-w-md">
+              <p className="text-white/70 max-w-md">
                 Digite sua pergunta jurídica acima para encontrar jurisprudência 
                 relevante dos tribunais superiores brasileiros.
               </p>

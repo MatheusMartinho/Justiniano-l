@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${inter.variable} font-sans bg-slate-900 text-white min-h-screen antialiased`}
+        className={`${inter.variable} font-sans text-white min-h-screen antialiased`}
       >
         <Header />
         <main className="pt-0">

@@ -1,26 +1,104 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Red Palette - Based on provided design */
+  --red-primary: #BF1725;      /* #BF1725 - Main red */
+  --red-dark: #73101B;         /* #73101B - Dark burgundy */
+  --red-accent: #D92546;       /* #D92546 - Bright accent */
+  --red-light: #F2A6AF;        /* #F2A6AF - Light pink */
+  --red-deep: #9C1311;         /* #9C1311 - Deep red */
+  
+  /* Backgrounds */
+  --background: #0a0a0a;
+  --background-glass: rgba(191, 23, 37, 0.1);
+  --foreground: #ffffff;
+  
+  /* Glass effects */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(191, 23, 37, 0.2);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-inter);
+  
+  /* Custom red colors */
+  --color-red-primary: var(--red-primary);
+  --color-red-dark: var(--red-dark);
+  --color-red-accent: var(--red-accent);
+  --color-red-light: var(--red-light);
+  --color-red-deep: var(--red-deep);
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0505 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+/* Glassmorphism utility classes */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(191, 23, 37, 0.2);
+}
+
+.glass-red {
+  background: rgba(191, 23, 37, 0.15);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(191, 23, 37, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(191, 23, 37, 0.3);
+}
+
+.glass-dark {
+  background: rgba(115, 16, 27, 0.3);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(115, 16, 27, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(115, 16, 27, 0.4);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Gradient backgrounds */
+.bg-gradient-red {
+  background: linear-gradient(135deg, #BF1725 0%, #73101B 100%);
+}
+
+.bg-gradient-red-soft {
+  background: linear-gradient(135deg, rgba(191, 23, 37, 0.2) 0%, rgba(115, 16, 27, 0.1) 100%);
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(191, 23, 37, 0.5);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(191, 23, 37, 0.7);
 }
