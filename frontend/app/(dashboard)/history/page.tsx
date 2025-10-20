@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { Clock, Search, Star, MessageSquare, Calendar, Trash2, Filter } from 'lucide-react';
+import { Clock, Search, Star, MessageSquare, Calendar, Trash2 } from 'lucide-react';
 import { Conversation } from '@/types/history';
 
 /**
@@ -98,10 +98,10 @@ export default function HistoryPage() {
 
   // Filter conversations
   const filteredConversations = conversations.filter(conv => {
-    const matchesFilter = 
-      filter === 'todas' ? true :
-      filter === 'favoritas' ? conv.favorito :
-      filter === 'recentes' ? true;
+    let matchesFilter = true;
+    if (filter === 'favoritas') {
+      matchesFilter = conv.favorito;
+    }
     
     const matchesSearch = 
       searchQuery === '' ||
