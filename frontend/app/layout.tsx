@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "react-hot-toast";
-import Header from "@/components/layout/Header";
+import Sidebar from "@/components/layout/Sidebar";
 import "./globals.css";
 
 const inter = Inter({
@@ -24,8 +24,8 @@ export default function RootLayout({
       <body
         className={`${inter.variable} font-sans text-white min-h-screen antialiased`}
       >
-        <Header />
-        <main className="pt-0">
+        <Sidebar />
+        <main className="ml-20">
           {children}
         </main>
         <Toaster 
