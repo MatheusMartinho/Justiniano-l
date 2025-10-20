@@ -20,6 +20,7 @@ export default function SearchBox({ onSearch, loading, disabled = false }: Searc
   const [query, setQuery] = useState('');
   const [error, setError] = useState('');
   const [isFocused, setIsFocused] = useState(false);
+  const [activeMode, setActiveMode] = useState<'search' | 'focus' | 'pro'>('search');
 
   // Example queries for user guidance
   const exampleQueries = [
@@ -85,32 +86,55 @@ export default function SearchBox({ onSearch, loading, disabled = false }: Searc
             {/* Left Icons */}
             <div className="flex items-center gap-1">
               <button
-                type="submit"
+                type="button"
+                onClick={() => setActiveMode('search')}
                 disabled={isDisabled}
-                className="w-9 h-9 rounded-lg glass-red flex items-center justify-center hover:scale-105 transition-all disabled:opacity-50"
+                className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-300 ${
+                  activeMode === 'search' 
+                    ? 'bg-gradient-red scale-105' 
+                    : 'glass-light hover:glass-red'
+                } disabled:opacity-50`}
                 title="Buscar"
               >
                 {loading ? (
-                  <Loader2 className="w-4 h-4 text-[#BF1725] animate-spin" />
+                  <Loader2 className={`w-4 h-4 animate-spin ${
+                    activeMode === 'search' ? 'text-white' : 'text-[#BF1725]'
+                  }`} />
                 ) : (
-                  <Search className="w-4 h-4 text-[#BF1725]" />
+                  <Search className={`w-4 h-4 transition-colors ${
+                    activeMode === 'search' ? 'text-white' : 'text-white/60'
+                  }`} />
                 )}
               </button>
               
               <button
                 type="button"
-                className="w-9 h-9 rounded-lg glass-light hover:glass-red flex items-center justify-center transition-all"
-                title="Foco"
+                onClick={() => setActiveMode('focus')}
+                className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-300 ${
+                  activeMode === 'focus' 
+                    ? 'bg-gradient-red scale-105' 
+                    : 'glass-light hover:glass-red'
+                }`}
+                title="Modo Foco"
               >
-                <span className="text-white/60 text-sm">⚡</span>
+                <span className={`text-sm transition-colors ${
+                  activeMode === 'focus' ? 'text-white' : 'text-white/60'
+                }`}>⚡</span>
               </button>
               
               <button
                 type="button"
-                className="w-9 h-9 rounded-lg glass-light hover:glass-red flex items-center justify-center transition-all"
-                title="Localização"
+                onClick={() => setActiveMode('pro')}
+                className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-300 ${
+                  activeMode === 'pro' 
+                    ? 'bg-gradient-red scale-105' 
+                    : 'glass-light hover:glass-red'
+                }`}
+                title="Modo Pro"
               >
-                <span className="text-white/60 text-sm">📍</span>
+                <span className={`text-sm transition-colors ${
+                  activeMode === 'pro' ? 'text-white' : 'text-white/60'
+                }`}>📍</span>
               </button>
             </div>
 
