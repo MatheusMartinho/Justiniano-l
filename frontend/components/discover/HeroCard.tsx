@@ -14,7 +14,7 @@ export default function HeroCard({ data }: HeroCardProps) {
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10" />
       
       {/* Content */}
-      <div className="relative z-20 h-full flex flex-col justify-end p-8 space-y-4">
+      <div className="relative z-20 h-full flex flex-col justify-center items-center text-center p-8 space-y-4 max-w-5xl mx-auto">
         {/* Badge */}
         <div className="flex items-center gap-3">
           <span className="px-3 py-1 bg-gradient-red text-white text-xs font-bold rounded-full">
@@ -26,7 +26,7 @@ export default function HeroCard({ data }: HeroCardProps) {
         </div>
 
         {/* Title */}
-        <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight max-w-4xl">
+        <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
           {data.titulo}
         </h2>
 
@@ -38,12 +38,12 @@ export default function HeroCard({ data }: HeroCardProps) {
         </div>
 
         {/* Summary */}
-        <p className="text-white/80 text-lg max-w-3xl">
+        <p className="text-white/80 text-lg">
           {data.resumo}
         </p>
 
         {/* Impact & CTA */}
-        <div className="flex items-center justify-between pt-4">
+        <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
           <div className="flex items-center gap-2">
             <TrendingUp className="w-5 h-5 text-[#BF1725]" />
             <span className="text-sm font-semibold text-white">
