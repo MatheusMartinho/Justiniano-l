@@ -109,7 +109,7 @@ export default function Home() {
           </h2>
           <Link
             href="/search"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold rounded-lg transition-colors text-lg"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-red text-white font-semibold rounded-full hover:scale-105 hover:shadow-2xl hover:shadow-[#BF1725]/50 transition-all text-lg"
           >
             Começar Gratuitamente
             <ArrowRight className="w-5 h-5" />
