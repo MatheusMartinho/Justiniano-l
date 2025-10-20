@@ -62,26 +62,12 @@ export default function SearchBox({ onSearch, loading, disabled = false }: Searc
       {/* Search Form - Perplexity Pro Style */}
       <form onSubmit={handleSubmit} className="space-y-2">
         <div 
-          className={`glass rounded-2xl p-1 transition-all ${
+          className={`glass rounded-2xl transition-all ${
             isFocused ? 'ring-2 ring-[#BF1725]/50' : ''
           }`}
         >
-          {/* Main Input Area */}
-          <div className="flex items-center gap-2 px-4 py-3">
-            {/* Search Icon */}
-            <button
-              type="submit"
-              disabled={isDisabled}
-              className="shrink-0 w-10 h-10 rounded-full glass-red flex items-center justify-center hover:scale-105 transition-all disabled:opacity-50"
-            >
-              {loading ? (
-                <Loader2 className="w-5 h-5 text-[#BF1725] animate-spin" />
-              ) : (
-                <Search className="w-5 h-5 text-[#BF1725]" />
-              )}
-            </button>
-
-            {/* Input Field */}
+          {/* Input Field */}
+          <div className="px-6 pt-5 pb-3">
             <input
               type="text"
               value={query}
@@ -90,10 +76,45 @@ export default function SearchBox({ onSearch, loading, disabled = false }: Searc
               onBlur={() => setIsFocused(false)}
               disabled={isDisabled}
               placeholder="Pergunte qualquer coisa. Digite @ para menções e / para atalhos."
-              className="flex-1 bg-transparent text-white placeholder-white/40 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed text-base"
+              className="w-full bg-transparent text-white placeholder-white/40 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed text-base"
             />
+          </div>
 
-            {/* Action Icons */}
+          {/* Action Icons Bar - Bottom */}
+          <div className="flex items-center justify-between px-4 pb-3 pt-2">
+            {/* Left Icons */}
+            <div className="flex items-center gap-1">
+              <button
+                type="submit"
+                disabled={isDisabled}
+                className="w-9 h-9 rounded-lg glass-red flex items-center justify-center hover:scale-105 transition-all disabled:opacity-50"
+                title="Buscar"
+              >
+                {loading ? (
+                  <Loader2 className="w-4 h-4 text-[#BF1725] animate-spin" />
+                ) : (
+                  <Search className="w-4 h-4 text-[#BF1725]" />
+                )}
+              </button>
+              
+              <button
+                type="button"
+                className="w-9 h-9 rounded-lg glass-light hover:glass-red flex items-center justify-center transition-all"
+                title="Foco"
+              >
+                <span className="text-white/60 text-sm">⚡</span>
+              </button>
+              
+              <button
+                type="button"
+                className="w-9 h-9 rounded-lg glass-light hover:glass-red flex items-center justify-center transition-all"
+                title="Localização"
+              >
+                <span className="text-white/60 text-sm">📍</span>
+              </button>
+            </div>
+
+            {/* Right Icons */}
             <div className="flex items-center gap-1">
               <button
                 type="button"
