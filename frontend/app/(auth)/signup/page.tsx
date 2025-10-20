@@ -22,7 +22,7 @@ export default function SignupPage() {
             Criar sua conta
           </h1>
           <p className="text-white/70">
-            Comece a usar o Perplexity Jurídico gratuitamente
+            Comece a usar o Justiniano I gratuitamente
           </p>
         </div>
 

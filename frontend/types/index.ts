@@ -1,5 +1,5 @@
 /**
- * TypeScript types for Perplexity Jurídico
+ * TypeScript types for Justiniano I
  */
 
 /**

@@ -18,7 +18,7 @@ export default function Header() {
               <Scale className="w-6 h-6 text-[#BF1725]" />
             </div>
             <span className="text-xl font-bold text-white">
-              Perplexity Jurídico
+              Justiniano I
             </span>
           </Link>
 

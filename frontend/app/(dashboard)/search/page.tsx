@@ -205,7 +205,7 @@ export default function SearchPage() {
             </div>
             <div className="text-center space-y-3">
               <h2 className="text-3xl font-bold text-white">
-                Bem-vindo ao Perplexity Jurídico
+                Bem-vindo ao Justiniano I
               </h2>
               <p className="text-white/70 max-w-md">
                 Digite sua pergunta jurídica acima para encontrar jurisprudência 

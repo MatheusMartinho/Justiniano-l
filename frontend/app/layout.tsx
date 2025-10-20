@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Perplexity Jurídico | Pesquisa Jurídica Inteligente",
+  title: "Justiniano I | Pesquisa Jurídica Inteligente",
   description: "Encontre jurisprudência dos tribunais brasileiros em segundos com IA",
 };
 
