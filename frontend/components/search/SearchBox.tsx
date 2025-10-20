@@ -91,18 +91,18 @@ export default function SearchBox({ onSearch, loading, disabled = false }: Searc
                 disabled={isDisabled}
                 className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-300 ${
                   activeMode === 'search' 
-                    ? 'bg-[#BF1725] shadow-[0_0_20px_rgba(191,23,37,0.6),0_0_40px_rgba(191,23,37,0.4),inset_0_0_10px_rgba(191,23,37,0.8)] scale-105' 
+                    ? 'bg-[#8B0000] shadow-[0_0_15px_rgba(139,0,0,0.5),0_0_30px_rgba(139,0,0,0.3)] border border-[#BF1725]/40' 
                     : 'glass-light hover:glass-red'
                 } disabled:opacity-50`}
                 title="Buscar"
               >
                 {loading ? (
                   <Loader2 className={`w-4 h-4 animate-spin ${
-                    activeMode === 'search' ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]' : 'text-[#BF1725]'
+                    activeMode === 'search' ? 'text-[#FF6B6B]' : 'text-[#BF1725]'
                   }`} />
                 ) : (
                   <Search className={`w-4 h-4 transition-colors ${
-                    activeMode === 'search' ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]' : 'text-white/60'
+                    activeMode === 'search' ? 'text-[#FF6B6B]' : 'text-white/60'
                   }`} />
                 )}
               </button>
@@ -112,13 +112,13 @@ export default function SearchBox({ onSearch, loading, disabled = false }: Searc
                 onClick={() => setActiveMode('focus')}
                 className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-300 ${
                   activeMode === 'focus' 
-                    ? 'bg-[#BF1725] shadow-[0_0_20px_rgba(191,23,37,0.6),0_0_40px_rgba(191,23,37,0.4),inset_0_0_10px_rgba(191,23,37,0.8)] scale-105' 
+                    ? 'bg-[#8B0000] shadow-[0_0_15px_rgba(139,0,0,0.5),0_0_30px_rgba(139,0,0,0.3)] border border-[#BF1725]/40' 
                     : 'glass-light hover:glass-red'
                 }`}
                 title="Modo Foco"
               >
                 <span className={`text-sm transition-colors ${
-                  activeMode === 'focus' ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]' : 'text-white/60'
+                  activeMode === 'focus' ? 'text-[#FF6B6B]' : 'text-white/60'
                 }`}>⚡</span>
               </button>
               
@@ -127,13 +127,13 @@ export default function SearchBox({ onSearch, loading, disabled = false }: Searc
                 onClick={() => setActiveMode('pro')}
                 className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-300 ${
                   activeMode === 'pro' 
-                    ? 'bg-[#BF1725] shadow-[0_0_20px_rgba(191,23,37,0.6),0_0_40px_rgba(191,23,37,0.4),inset_0_0_10px_rgba(191,23,37,0.8)] scale-105' 
+                    ? 'bg-[#8B0000] shadow-[0_0_15px_rgba(139,0,0,0.5),0_0_30px_rgba(139,0,0,0.3)] border border-[#BF1725]/40' 
                     : 'glass-light hover:glass-red'
                 }`}
                 title="Modo Pro"
               >
                 <span className={`text-sm transition-colors ${
-                  activeMode === 'pro' ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]' : 'text-white/60'
+                  activeMode === 'pro' ? 'text-[#FF6B6B]' : 'text-white/60'
                 }`}>📍</span>
               </button>
             </div>
