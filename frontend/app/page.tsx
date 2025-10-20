@@ -29,7 +29,7 @@ export default function Home() {
             {/* Heading */}
             <h1 className="text-5xl sm:text-7xl font-bold text-white tracking-tight">
               Pesquisa Jurídica
-              <span className="block bg-gradient-to-r from-[#BF1725] to-[#D92546] bg-clip-text text-transparent">Inteligente</span>
+              <span className="block bg-gradient-to-r from-[#BF1725] to-[#D92546] bg-clip-text text-transparent pb-2">Inteligente</span>
             </h1>
             
             {/* Subheading */}
