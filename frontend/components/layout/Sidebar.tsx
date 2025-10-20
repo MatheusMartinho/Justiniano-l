@@ -30,26 +30,7 @@ export default function Sidebar() {
 
       {/* Navigation Links */}
       <nav className="flex-1 flex flex-col items-center gap-6">
-        {/* Início */}
-        <Link
-          href="/"
-          className={`flex flex-col items-center gap-1 transition-all ${
-            isActive('/') 
-              ? 'text-white' 
-              : 'text-white/50 hover:text-white'
-          }`}
-        >
-          <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all ${
-            isActive('/') 
-              ? 'bg-[#8B0000] shadow-[0_0_15px_rgba(139,0,0,0.5),0_0_30px_rgba(139,0,0,0.3)] border border-[#BF1725]/40' 
-              : 'glass-light hover:glass-red'
-          }`}>
-            <Search className={`w-5 h-5 ${isActive('/') ? 'text-[#FF6B6B]' : ''}`} />
-          </div>
-          <span className="text-[10px] font-medium">Início</span>
-        </Link>
-
-        {/* Descobrir */}
+        {/* Início - Search Page */}
         <Link
           href="/search"
           className={`flex flex-col items-center gap-1 transition-all ${
@@ -63,12 +44,31 @@ export default function Sidebar() {
               ? 'bg-[#8B0000] shadow-[0_0_15px_rgba(139,0,0,0.5),0_0_30px_rgba(139,0,0,0.3)] border border-[#BF1725]/40' 
               : 'glass-light hover:glass-red'
           }`}>
-            <Globe className={`w-5 h-5 ${isActive('/search') ? 'text-[#FF6B6B]' : ''}`} />
+            <Search className={`w-5 h-5 ${isActive('/search') ? 'text-[#FF6B6B]' : ''}`} />
+          </div>
+          <span className="text-[10px] font-medium">Início</span>
+        </Link>
+
+        {/* Descobrir - News Page */}
+        <Link
+          href="/news"
+          className={`flex flex-col items-center gap-1 transition-all ${
+            isActive('/news') 
+              ? 'text-white' 
+              : 'text-white/50 hover:text-white'
+          }`}
+        >
+          <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all ${
+            isActive('/news') 
+              ? 'bg-[#8B0000] shadow-[0_0_15px_rgba(139,0,0,0.5),0_0_30px_rgba(139,0,0,0.3)] border border-[#BF1725]/40' 
+              : 'glass-light hover:glass-red'
+          }`}>
+            <Globe className={`w-5 h-5 ${isActive('/news') ? 'text-[#FF6B6B]' : ''}`} />
           </div>
           <span className="text-[10px] font-medium">Descobrir</span>
         </Link>
 
-        {/* Histórico */}
+        {/* Histórico - History Page */}
         <Link
           href="/history"
           className={`flex flex-col items-center gap-1 transition-all ${
@@ -84,7 +84,7 @@ export default function Sidebar() {
           }`}>
             <BarChart3 className={`w-5 h-5 ${isActive('/history') ? 'text-[#FF6B6B]' : ''}`} />
           </div>
-          <span className="text-[10px] font-medium">Espaços</span>
+          <span className="text-[10px] font-medium">Histórico</span>
         </Link>
       </nav>
 
