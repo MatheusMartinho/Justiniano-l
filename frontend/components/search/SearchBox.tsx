@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from 'react';
-import { Search, Loader2 } from 'lucide-react';
+import { Search, Loader2, Sparkles, Image, Mic, Paperclip } from 'lucide-react';
 
 interface SearchBoxProps {
   /** Callback function when search is submitted */
@@ -14,11 +14,12 @@ interface SearchBoxProps {
 
 /**
  * SearchBox Component
- * Main search input for legal queries in natural language
+ * Perplexity Pro style search input for legal queries
  */
 export default function SearchBox({ onSearch, loading, disabled = false }: SearchBoxProps) {
   const [query, setQuery] = useState('');
   const [error, setError] = useState('');
+  const [isFocused, setIsFocused] = useState(false);
 
   // Example queries for user guidance
   const exampleQueries = [
@@ -58,36 +59,76 @@ export default function SearchBox({ onSearch, loading, disabled = false }: Searc
 
   return (
     <div className="w-full space-y-4">
-      {/* Search Form */}
+      {/* Search Form - Perplexity Pro Style */}
       <form onSubmit={handleSubmit} className="space-y-2">
-        <div className="relative">
-          <input
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            disabled={isDisabled}
-            placeholder="Digite sua pergunta jurídica em linguagem natural..."
-            className="w-full px-6 py-5 pr-40 text-lg glass text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-[#BF1725] focus:border-[#BF1725]/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all rounded-2xl"
-          />
-          
-          {/* Search Button */}
-          <button
-            type="submit"
-            disabled={isDisabled}
-            className="absolute right-2 top-1/2 -translate-y-1/2 px-6 py-3 bg-gradient-red text-white font-semibold rounded-full hover:scale-105 hover:shadow-lg hover:shadow-[#BF1725]/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
-          >
-            {loading ? (
-              <>
-                <Loader2 className="w-5 h-5 animate-spin" />
-                <span>Buscando...</span>
-              </>
-            ) : (
-              <>
-                <Search className="w-5 h-5" />
-                <span>Buscar</span>
-              </>
-            )}
-          </button>
+        <div 
+          className={`glass rounded-2xl p-1 transition-all ${
+            isFocused ? 'ring-2 ring-[#BF1725]/50' : ''
+          }`}
+        >
+          {/* Main Input Area */}
+          <div className="flex items-center gap-2 px-4 py-3">
+            {/* Search Icon */}
+            <button
+              type="submit"
+              disabled={isDisabled}
+              className="shrink-0 w-10 h-10 rounded-full glass-red flex items-center justify-center hover:scale-105 transition-all disabled:opacity-50"
+            >
+              {loading ? (
+                <Loader2 className="w-5 h-5 text-[#BF1725] animate-spin" />
+              ) : (
+                <Search className="w-5 h-5 text-[#BF1725]" />
+              )}
+            </button>
+
+            {/* Input Field */}
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              onFocus={() => setIsFocused(true)}
+              onBlur={() => setIsFocused(false)}
+              disabled={isDisabled}
+              placeholder="Pergunte qualquer coisa. Digite @ para menções e / para atalhos."
+              className="flex-1 bg-transparent text-white placeholder-white/40 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed text-base"
+            />
+
+            {/* Action Icons */}
+            <div className="flex items-center gap-1">
+              <button
+                type="button"
+                className="w-9 h-9 rounded-lg glass-light hover:glass-red flex items-center justify-center transition-all"
+                title="Anexar arquivo"
+              >
+                <Paperclip className="w-4 h-4 text-white/60" />
+              </button>
+              
+              <button
+                type="button"
+                className="w-9 h-9 rounded-lg glass-light hover:glass-red flex items-center justify-center transition-all"
+                title="Adicionar imagem"
+              >
+                <Image className="w-4 h-4 text-white/60" />
+              </button>
+              
+              <button
+                type="button"
+                className="w-9 h-9 rounded-lg glass-light hover:glass-red flex items-center justify-center transition-all"
+                title="Busca por voz"
+              >
+                <Mic className="w-4 h-4 text-white/60" />
+              </button>
+              
+              <button
+                type="submit"
+                disabled={isDisabled || !query.trim()}
+                className="w-9 h-9 rounded-lg bg-gradient-red hover:scale-105 flex items-center justify-center transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                title="Enviar"
+              >
+                <Sparkles className="w-4 h-4 text-white" />
+              </button>
+            </div>
+          </div>
         </div>
         
         {/* Error Message */}
