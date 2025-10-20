@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import Sidebar from "@/components/layout/Sidebar";
+import LiquidGlassBackground from "@/components/effects/LiquidGlassBackground";
 import "./globals.css";
 
 const inter = Inter({
@@ -24,8 +25,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} font-sans text-white min-h-screen antialiased`}
       >
+        <LiquidGlassBackground />
         <Sidebar />
-        <main className="ml-20">
+        <main className="ml-20 relative z-10">
           {children}
         </main>
         <Toaster 
