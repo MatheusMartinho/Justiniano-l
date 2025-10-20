@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Scale, Search, Zap, Shield, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { Search, Zap, Shield, ArrowRight } from "lucide-react";
 
 /**
  * Homepage
@@ -15,7 +16,13 @@ export default function Home() {
             {/* Icon */}
             <div className="flex justify-center">
               <div className="w-32 h-32 rounded-full glass-red flex items-center justify-center animate-pulse">
-                <Scale className="w-16 h-16 text-[#BF1725]" />
+                <Image
+                  src="/images/logos/justiniano_logo1.webp"
+                  alt="Justiniano I Logo"
+                  width={80}
+                  height={80}
+                  className="object-contain"
+                />
               </div>
             </div>
             

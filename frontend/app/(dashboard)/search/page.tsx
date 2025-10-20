@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { Scale } from 'lucide-react';
+import Image from 'next/image';
 import SearchBox from '@/components/search/SearchBox';
 import ResultCard from '@/components/search/ResultCard';
 import LoadingState from '@/components/search/LoadingState';
@@ -201,7 +201,13 @@ export default function SearchPage() {
         {!result && !loading && !error && (
           <div className="flex flex-col items-center justify-center min-h-[400px] space-y-6">
             <div className="w-32 h-32 rounded-full glass-red flex items-center justify-center">
-              <Scale className="w-16 h-16 text-[#BF1725]" />
+              <Image
+                src="/images/logos/justiniano_logo1.webp"
+                alt="Justiniano I Logo"
+                width={80}
+                height={80}
+                className="object-contain"
+              />
             </div>
             <div className="text-center space-y-3">
               <h2 className="text-3xl font-bold text-white">
