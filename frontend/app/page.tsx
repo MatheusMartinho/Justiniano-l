@@ -15,12 +15,12 @@ export default function Home() {
           <div className="text-center space-y-8">
             {/* Icon */}
             <div className="flex justify-center">
-              <div className="w-32 h-32 rounded-full glass-red flex items-center justify-center animate-pulse">
+              <div className="w-48 h-48 rounded-full glass-red flex items-center justify-center animate-pulse">
                 <Image
                   src="/images/logos/justiniano_logo1.webp"
                   alt="Justiniano I Logo"
-                  width={80}
-                  height={80}
+                  width={140}
+                  height={140}
                   className="object-contain"
                 />
               </div>

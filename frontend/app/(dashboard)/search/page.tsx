@@ -200,12 +200,12 @@ export default function SearchPage() {
         {/* Empty State */}
         {!result && !loading && !error && (
           <div className="flex flex-col items-center justify-center min-h-[400px] space-y-6">
-            <div className="w-32 h-32 rounded-full glass-red flex items-center justify-center">
+            <div className="w-48 h-48 rounded-full glass-red flex items-center justify-center">
               <Image
                 src="/images/logos/justiniano_logo1.webp"
                 alt="Justiniano I Logo"
-                width={80}
-                height={80}
+                width={140}
+                height={140}
                 className="object-contain"
               />
             </div>
